@@ -1,4 +1,5 @@
 import React from "react";
+import './Header.css'
 import { useSelector } from "react-redux";
 
 export const Header = () => {
@@ -14,10 +15,10 @@ export const Header = () => {
       <h2>Hello in nedoshop</h2>
 
       <div className="d-flex justify-between">
-        <div className="mx-10" title="cart">
+        <div className="mx-10 jn-tooltip" data-title={"cart"}>
           cart: {cart.length}
         </div>
-        <div className="mx-10" title="wishlist">
+        <div className="mx-10 jn-tooltip" data-title={"wishlist"}>
           wishlist: {wishlist.length}
         </div>
       </div>
