@@ -1,0 +1,12 @@
+.cartBtn {
+    width: 150px;
+    height: 35px;
+    color: white;
+    background-color: green;
+    margin: 10px;
+    border-radius: 6px;
+}
+
+.cartRemove {
+    background-color: darkred;
+}

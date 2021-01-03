@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-export const Header = (props) => {
+export const Header = () => {
   const { cart, wishlist } = useSelector(
     ({ cart: { cart }, wishlist: { wishlist } }) => ({
       wishlist,

@@ -1,14 +1,14 @@
-import { SET_PRODUCTS } from "../action-types";
+import {SET_PRODUCTS} from "../action-types";
 
 const initialState = {
   products: []
 };
 
 export default (state = initialState, action) => {
-  switch (action.type) {
+  const {type, payload} = action
+  switch (type) {
     case SET_PRODUCTS: {
-      console.log(action);
-      return { ...state, products: action.payload };
+      return {...state, products: payload};
     }
     default: {
       return state;
