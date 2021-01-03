@@ -1,25 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useCallback } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Header } from "./components/header";
+import { ProductList } from "./components/product-list";
+import { useServices } from "./services";
+import { setProducts } from "./redux";
+import "./styles.css";
 
-function App() {
+// react devtools extension
+// redux devtools extension
+
+// install all libs
+// redux, react-redux, redux-thunk
+
+// prepare proper redux structure
+// store
+// reducers
+// action-types
+// action-creators
+
+// create basic components
+// header
+// productList
+// productItem
+
+// products
+// cart
+// wishlist
+
+export default function App() {
+  const { cart, wishlist, products } = useSelector(
+    ({ cart: { cart }, wishlist: { wishlist }, products: { products } }) => ({
+      cart,
+      wishlist,
+      products
+    })
+  );
+
+  const dispatch = useDispatch();
+
+  // const fetchData = useCallback(async () => {
+  //   const response = await productService.getProducts();
+  //   const json = await response.json();
+
+  //   dispatch(setProducts(json));
+  // }, []);
+
+  useEffect(() => {
+    dispatch(setProducts());
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {products.length}
+      <Header />
+      <ProductList />
     </div>
   );
 }
-
-export default App;
