@@ -2,11 +2,14 @@
     display: inline;
     position: relative;
 }
+.jn-tooltip:hover {
+    cursor: pointer;
+}
 .jn-tooltip:hover:after {
     content: attr(data-title);
     z-index: 999;
     position: absolute;
-    bottom: -50px;
+    bottom: -60px;
     left: -40px;
     width: 100px;
     padding: 7px 15px 10px 15px;
@@ -20,13 +23,13 @@
     -ms-border-radius: 3px;
     border-radius: 3px;
 }
-.jn-tooltip:hover:before {
+/*.jn-tooltip:hover:before {
     content: "";
     z-index: 1000;
     position: absolute;
     bottom: 20px;
-    left: 50%;
+    left: 40%;
     border-style: solid;
     border-width: 6px 6px 0 6px;
     border-color: #444 transparent;
-}
+}*/
